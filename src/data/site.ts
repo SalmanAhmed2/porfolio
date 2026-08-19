@@ -184,10 +184,10 @@ export const experienceFocus: ExperienceFocus[] = [
 ]
 
 export const socialLinks: SocialLink[] = [
-  { name: 'GitHub', href: '#', placeholder: true },
-  { name: 'LinkedIn', href: '#', placeholder: true },
-  { name: 'Fiverr', href: '#', placeholder: true },
-  { name: 'Upwork', href: '#', placeholder: true },
+  { name: 'GitHub', href: 'https://github.com/SalmanAhmed2', placeholder: false },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/salmanahmed35518/', placeholder: false },
+  { name: 'Fiverr', href: 'https://www.fiverr.com/sellers/salmanahmed02', placeholder: false },
+  { name: 'Website', href: 'https://portfolio-smoky-nine-66.vercel.app/', placeholder: false },
 ]
 
 export const heroTechBadges = ['React', 'Next.js', 'TypeScript', 'Node.js']

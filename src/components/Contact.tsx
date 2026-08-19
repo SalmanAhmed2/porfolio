@@ -1,11 +1,15 @@
-import { motion, useReducedMotion } from 'framer-motion'
-import { Mail, MapPin, Phone } from 'lucide-react'
-import { SectionHeader } from './SectionHeader'
-import { MagneticButton } from './MagneticButton'
-import { siteInfo, socialLinks } from '../data/site'
+import { motion, useReducedMotion } from "framer-motion";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { SectionHeader } from "./SectionHeader";
+import { MagneticButton } from "./MagneticButton";
+import { siteInfo, socialLinks } from "../data/site";
+import GitHub from "../assets/github.png";
+import LinkedIn from "../assets/linkedin.png";
+import Fiverr from "../assets/fiverr.png";
+import Web from "../assets/web.png";
 
 export function Contact() {
-  const reduceMotion = useReducedMotion()
+  const reduceMotion = useReducedMotion();
 
   return (
     <section id="contact" className="py-20 md:py-32 relative overflow-hidden">
@@ -16,13 +20,13 @@ export function Contact() {
             ? {}
             : {
                 background: [
-                  'radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)',
-                  'radial-gradient(circle at 80% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)',
-                  'radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)',
+                  "radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
+                  "radial-gradient(circle at 80% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
+                  "radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
                 ],
               }
         }
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       />
 
@@ -89,21 +93,45 @@ export function Contact() {
             <div className="flex items-center justify-center gap-3">
               {socialLinks.map((link, i) => (
                 <motion.a
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={link.name}
                   href={link.href}
                   aria-disabled={link.placeholder}
-                  aria-label={link.placeholder ? `${link.name} (coming soon)` : link.name}
+                  aria-label={
+                    link.placeholder ? `${link.name} (coming soon)` : link.name
+                  }
                   initial={reduceMotion ? {} : { opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.08 }}
                   whileHover={reduceMotion ? {} : { y: -4, scale: 1.05 }}
                   className={`w-11 h-11 rounded-xl glass flex items-center justify-center text-xs font-semibold text-text-secondary hover:text-fox hover:border-fox/30 hover:shadow-[0_0_20px_rgba(255,106,0,0.2)] transition-all no-underline ${
-                    link.placeholder ? 'pointer-events-none opacity-50' : ''
+                    link.placeholder ? "pointer-events-none opacity-50" : ""
                   }`}
-                  onClick={link.placeholder ? (e) => e.preventDefault() : undefined}
+                  onClick={
+                    link.placeholder ? (e) => e.preventDefault() : undefined
+                  }
                 >
-                  {link.name.slice(0, 2)}
+                  {/* <a href={link.href} target="_blank" rel="noopener noreferrer"> */}
+                  <img
+                    src={
+                      link.name === "GitHub"
+                        ? GitHub
+                        : link.name === "LinkedIn"
+                          ? LinkedIn
+                          : link.name === "Fiverr"
+                            ? Fiverr
+                            : Web
+                    }
+                    style={{
+                      filter: "invert(1) brightness(0.8)",
+                      height: "20px",
+                      width: "20px",
+                    }}
+                    alt={link.name}
+                  />
+                  {/* </a> */}
                 </motion.a>
               ))}
             </div>
@@ -111,5 +139,5 @@ export function Contact() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
