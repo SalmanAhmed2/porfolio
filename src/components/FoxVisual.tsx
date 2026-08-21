@@ -7,10 +7,15 @@ import {
 import { useEffect } from "react";
 
 const techBadges = [
-  { label: "React", x: "-65%", y: "-25%", delay: 0 },
-  { label: "Next.js", x: "60%", y: "-35%", delay: 0.15 },
-  { label: "TypeScript", x: "-55%", y: "40%", delay: 0.3 },
-  { label: "Node.js", x: "55%", y: "30%", delay: 0.45 },
+  { label: "React", x: "-140%", y: "-100%", delay: 0 },
+  { label: "Next.js", x: "130%", y: "-25%", delay: 0.15 },
+  { label: "TypeScript", x: "-125%", y: "90%", delay: 0.3 },
+  { label: "Node.js", x: "128%", y: "55%", delay: 0.45 },
+  { label: "React Native", x: "-150%", y: "-30%", delay: 0.6 },
+  { label: "MongoDB", x: "150%", y: "30%", delay: 0.75 },
+  { label: "Material UI", x: "-55%", y: "-130%", delay: 0.9 },
+  { label: "Tailwind CSS", x: "30%", y: "130%", delay: 1.05 },
+  { label: "Ant Design", x: "70%", y: "-100%", delay: 1.2 },
 ];
 
 export function FoxVisual() {
@@ -89,7 +94,7 @@ export function FoxVisual() {
       </motion.div>
 
       {/* Tech badges */}
-      {techBadges.map((badge) => (
+ {techBadges.map((badge) => (
         <motion.div
           key={badge.label}
           className="absolute z-20 glass px-4 py-2 rounded-full text-xs font-semibold border border-fox/20 shadow-[0_0_20px_rgba(255,106,0,0.15)]"
@@ -120,7 +125,7 @@ export function FoxVisual() {
           <span className="text-fox">{badge.label}</span>
         </motion.div>
       ))}
-
+      
       {/* Orbiting particles */}
       {!reduceMotion &&
         Array.from({ length: 12 }).map((_, i) => (
