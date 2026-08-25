@@ -7,10 +7,10 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "dev": "node scripts/run.mjs vite",
+    "build": "node scripts/run.mjs tsc -b && node scripts/run.mjs vite build",
+    "lint": "node scripts/run.mjs oxlint",
+    "preview": "node scripts/run.mjs vite preview"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
