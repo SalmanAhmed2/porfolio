@@ -64,7 +64,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               src={project.image}
               alt={project.title}
               loading="lazy"
-              className={`w-full h-full object-cover ${isFeatured ? 'min-h-[280px] lg:min-h-[420px]' : 'min-h-[240px]'}`}
+              className={`w-full h-full ${project.imageAspect === 'portrait' ? 'object-contain bg-surface-secondary' : 'object-cover'} ${isFeatured ? 'min-h-[280px] lg:min-h-[420px]' : 'min-h-[240px]'}`}
               whileHover={reduceMotion ? {} : { scale: 1.08 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             />
@@ -138,15 +138,17 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                   className="transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
                 />
               </Link>
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-sm font-medium text-text-primary no-underline hover:border-fox/40 hover:text-fox transition-all"
-              >
-                Live Demo
-                <ExternalLink size={14} />
-              </a>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-white/10 text-sm font-medium text-text-primary no-underline hover:border-fox/40 hover:text-fox transition-all"
+                >
+                  Live Demo
+                  <ExternalLink size={14} />
+                </a>
+              )}
             </div>
           </div>
         </div>

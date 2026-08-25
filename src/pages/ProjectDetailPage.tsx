@@ -23,6 +23,9 @@ export function ProjectDetailPage() {
     { title: 'My Contribution', content: project.contribution },
   ]
 
+  const isPortrait = project.imageAspect === 'portrait'
+  const galleryImages = project.screenshots ?? [project.image]
+
   return (
     <div className="min-h-screen">
       <motion.header
@@ -71,7 +74,7 @@ export function ProjectDetailPage() {
           <motion.img
             src={project.image}
             alt={`${project.title} screenshot`}
-            className="w-full aspect-video object-cover"
+            className={`w-full ${isPortrait ? 'aspect-[9/16] max-h-[640px] mx-auto object-contain bg-surface-secondary' : 'aspect-video object-cover'}`}
             loading="lazy"
             whileHover={reduceMotion ? {} : { scale: 1.03 }}
             transition={{ duration: 0.5 }}
@@ -119,9 +122,11 @@ export function ProjectDetailPage() {
               ))}
             </ul>
 
-            <MagneticButton href={project.liveUrl} type="a" className="w-full">
-              Live Demo <ExternalLink size={16} />
-            </MagneticButton>
+            {project.liveUrl && (
+              <MagneticButton href={project.liveUrl} type="a" className="w-full">
+                Live Demo <ExternalLink size={16} />
+              </MagneticButton>
+            )}
           </motion.aside>
         </div>
 
@@ -131,23 +136,30 @@ export function ProjectDetailPage() {
           viewport={{ once: true }}
         >
           <h2 className="font-display text-xl font-semibold text-fox mb-6">Screenshots</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <motion.div
-              whileHover={reduceMotion ? {} : { y: -4 }}
-              className="rounded-2xl overflow-hidden border border-white/10 group"
-            >
-              <img
-                src={project.image}
-                alt={`${project.title} main view`}
-                loading="lazy"
-                className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-            </motion.div>
-            <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface-secondary flex items-center justify-center aspect-video">
-              <p className="text-text-secondary text-sm px-6 text-center">
-                Additional project views available on live demo
-              </p>
-            </div>
+          <div className={`grid gap-6 ${isPortrait ? 'md:grid-cols-2 max-w-3xl mx-auto' : 'md:grid-cols-2'}`}>
+            {galleryImages.map((src, i) => (
+              <motion.div
+                key={src}
+                whileHover={reduceMotion ? {} : { y: -4 }}
+                className="rounded-2xl overflow-hidden border border-white/10 group bg-surface-secondary"
+              >
+                <img
+                  src={src}
+                  alt={`${project.title} screenshot ${i + 1}`}
+                  loading="lazy"
+                  className={`w-full ${isPortrait ? 'aspect-[9/16] max-h-[560px] mx-auto object-contain' : 'aspect-video object-cover group-hover:scale-105 transition-transform duration-500'}`}
+                />
+              </motion.div>
+            ))}
+            {!isPortrait && galleryImages.length === 1 && (
+              <div className="rounded-2xl overflow-hidden border border-white/10 bg-surface-secondary flex items-center justify-center aspect-video">
+                <p className="text-text-secondary text-sm px-6 text-center">
+                  {project.liveUrl
+                    ? 'Additional project views available on live demo'
+                    : 'Additional project views coming soon'}
+                </p>
+              </div>
+            )}
           </div>
         </motion.section>
       </main>
