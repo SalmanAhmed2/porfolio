@@ -64,7 +64,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
               src={project.image}
               alt={project.title}
               loading="lazy"
-              className={`w-full h-full ${project.imageAspect === 'portrait' ? 'object-contain bg-surface-secondary' : 'object-cover'} ${isFeatured ? 'min-h-[280px] lg:min-h-[420px]' : 'min-h-[240px]'}`}
+              className={`w-full h-full ${project.imageAspect === 'portrait' ? 'object-cover bg-surface-secondary' : 'object-cover'} ${isFeatured ? 'min-h-[280px] lg:min-h-[420px]' : 'min-h-[240px]'}`}
               whileHover={reduceMotion ? {} : { scale: 1.08 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             />
