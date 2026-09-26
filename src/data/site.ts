@@ -40,14 +40,14 @@ export interface SocialLink {
 
 export const siteInfo = {
   name: 'Salman Ahmed',
-  title: 'Senior Frontend Developer',
+  title: 'MERN Stack Developer',
   experience: '5+ Years',
   location: 'Karachi, Pakistan',
   email: 'salmanahmed35518@gmail.com',
   phone: '03402031088',
   tagline: 'Building Digital Experiences That Think Fast.',
   subtitle:
-    'Senior Frontend Developer specializing in React.js, Next.js and modern web applications.',
+    'MERN Stack Developer specializing in React.js, Next.js, React Native and modern web applications.',
   bio: 'I build scalable, high-performance and user-focused digital products — from enterprise CRM platforms to AI-powered marketing solutions.',
   resumeUrl: '/resume.pdf',
 }
@@ -71,7 +71,7 @@ export const stats: StatItem[] = [
 export const aboutContent = {
   title: 'Behind the Code',
   paragraphs: [
-    "I'm Salman Ahmed, a Senior Frontend Developer with 5+ years of experience building dynamic, scalable and user-friendly web applications.",
+    "I'm Salman Ahmed, a MERN Stack Developer with 5+ years of experience building dynamic, scalable and user-friendly web applications.",
     'My primary expertise lies in React.js and modern frontend architecture, while my full-stack experience with Node.js and PostgreSQL allows me to understand and contribute across the entire product lifecycle.',
     'I enjoy transforming complex business requirements into intuitive interfaces, scalable systems and polished digital experiences.',
   ],
@@ -88,15 +88,15 @@ export const aboutContent = {
 export const skillCategories: SkillCategory[] = [
   {
     title: 'Frontend',
-    skills: ['React.js', 'Next.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React.js', 'React Native', 'Next.js', 'Tailwind CSS'],
   },
   {
     title: 'State & Data',
-    skills: ['Redux', 'Redux Toolkit', 'RTK Query', 'Firebase'],
+    skills: ['Redux', 'Redux Toolkit', 'RTK Query'],
   },
   {
     title: 'Backend',
-    skills: ['Node.js', 'REST APIs', 'PostgreSQL'],
+    skills: ['Node.js', 'REST APIs', 'Express.js', 'MongoDB', 'Firebase', 'PostgreSQL'],
   },
   {
     title: 'Other',
@@ -162,24 +162,19 @@ export const processSteps: ProcessStep[] = [
 
 export const experienceFocus: ExperienceFocus[] = [
   {
-    title: 'Symmetry Group — Junior Consultant (Software Developer)',
+    title: 'Symmetry Group — Junior Consultant (Software Developer) — (3 years 2 months)',
     description:
       'Aug 2023 – Present · Building role-based React/Next portals (admin, vendor, employee, user) with performance-optimized, user-first UI.',
   },
   {
-    title: 'Digital leap — Junior Developer (Intern → Promotion)',
-    description:
-      'Jan 2021 – Sep 2022 · Salon app with 3 portals (User booking, Vendor employee management, Admin services/store/category control); PWA review app with AI face detection; analytics & performance dashboard (React, TypeScript, ApexCharts, Redux Toolkit Query); influencer marketing platform with campaign analytics and admin/customer/influencer portals + mobile app.',
-  },
-  {
-    title: 'Digital Auxilius — Frontend Developer',
+    title: 'Digital Auxilius — Associate Software Developer — (9 months)',
     description:
       'Sep 2022 – Jul 2023 · HealthCare Talent Link (LinkedIn-style) with Organization & Individual portals (jobs, interviews, hiring, freelancing); React JS + Ant Design; integrated Stripe for payment processing.',
   },
   {
-    title: 'Jinnah Govt. College — Software Developer / Associate Software Developer',
+    title: 'Digital leap — Software Developer (Intern → Promotion) — (1 year 9 months)',
     description:
-      'Duration from CV: 1 year 9 months (Software Developer) + 10 months (Associate Software Developer).',
+      'Jan 2021 – Sep 2022 · Salon app with 3 portals (User booking, Vendor employee management, Admin services/store/category control); PWA review app with AI face detection; analytics & performance dashboard (React, TypeScript, ApexCharts, Redux Toolkit Query); influencer marketing platform with campaign analytics and admin/customer/influencer portals + mobile app.',
   },
 ]
 
