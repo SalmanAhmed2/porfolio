@@ -182,7 +182,7 @@ export const socialLinks: SocialLink[] = [
   { name: 'GitHub', href: 'https://github.com/SalmanAhmed2', placeholder: false },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/salmanahmed35518/', placeholder: false },
   { name: 'Fiverr', href: 'https://www.fiverr.com/sellers/salmanahmed02', placeholder: false },
-  { name: 'Website', href: 'https://portfolio-smoky-nine-66.vercel.app/', placeholder: false },
+  { name: 'Whatsapp', href: 'https://wa.me/03402031088', placeholder: false },
 ]
 
 export const heroTechBadges = ['React', 'Next.js', 'TypeScript', 'Node.js']

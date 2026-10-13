@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { FloatingWhatsApp } from '@digicroz/react-floating-whatsapp'
 import { HomePage } from './pages/HomePage'
 import { ScrollToHash } from './components/ScrollToHash'
 import { ScrollProgress } from './components/ScrollProgress'
@@ -17,14 +18,36 @@ function PageLoader() {
   )
 }
 
+function WhatsappFloating() {
+  const handleSubmit = (event: any, message: any) => {
+    console.log('Message sent:', message)
+    // Add your custom logic here
+  }
+  return (
+    <FloatingWhatsApp
+      phoneNumber='03402031088'
+      accountName='Customer Support'
+      onSubmit={handleSubmit}
+      className='custom-whatsapp-widget'
+      buttonStyle={{ backgroundColor: '#25D366' }}
+      chatboxStyle={{ borderRadius: '20px' }}
+      darkMode={true}
+      notification={true}
+      notificationDelay={30}
+    />
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToHash />
       <ScrollProgress />
       <CursorGlow />
+      <WhatsappFloating />
       <div className="grain-overlay" aria-hidden="true" />
       <Suspense fallback={<PageLoader />}>
+
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/work/:id" element={<ProjectDetailPage />} />

@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import { existsSync, readdirSync } from 'node:fs'
 import { homedir } from 'node:os'
-import { dirname, join } from 'node:path'
+import { delimiter, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -62,7 +62,7 @@ Then re-run this command.
 
 const env = {
   ...process.env,
-  PATH: `${dirname(nodeBin)}:${process.env.PATH || ''}`,
+  PATH: [dirname(nodeBin), process.env.PATH].filter(Boolean).join(delimiter),
 }
 
 if (nodeBin !== process.execPath) {

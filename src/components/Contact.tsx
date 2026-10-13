@@ -6,7 +6,7 @@ import { siteInfo, socialLinks } from "../data/site";
 import GitHub from "../assets/github.png";
 import LinkedIn from "../assets/linkedin.png";
 import Fiverr from "../assets/fiverr.png";
-import Web from "../assets/web.png";
+import Whatsapp from "../assets/whatsapp.png";
 
 export function Contact() {
   const reduceMotion = useReducedMotion();
@@ -19,12 +19,12 @@ export function Contact() {
           reduceMotion
             ? {}
             : {
-                background: [
-                  "radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
-                  "radial-gradient(circle at 80% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
-                  "radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
-                ],
-              }
+              background: [
+                "radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
+                "radial-gradient(circle at 80% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
+                "radial-gradient(circle at 20% 50%, rgba(255,106,0,0.08) 0%, transparent 50%)",
+              ],
+            }
         }
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
@@ -48,7 +48,7 @@ export function Contact() {
           <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-fox/40 via-fox/10 to-cyan/20 opacity-60 blur-sm" />
           <div className="relative glass rounded-3xl p-8 md:p-14 text-center border border-white/10">
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-              <MagneticButton href={`mailto:${siteInfo.email}`} type="a">
+              <MagneticButton href={`https://wa.me/03402031088`} type="a">
                 Start a Conversation
               </MagneticButton>
               <MagneticButton
@@ -106,9 +106,8 @@ export function Contact() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.08 }}
                   whileHover={reduceMotion ? {} : { y: -4, scale: 1.05 }}
-                  className={`w-11 h-11 rounded-xl glass flex items-center justify-center text-xs font-semibold text-text-secondary hover:text-fox hover:border-fox/30 hover:shadow-[0_0_20px_rgba(255,106,0,0.2)] transition-all no-underline ${
-                    link.placeholder ? "pointer-events-none opacity-50" : ""
-                  }`}
+                  className={`w-11 h-11 rounded-xl glass flex items-center justify-center text-xs font-semibold text-text-secondary hover:text-fox hover:border-fox/30 hover:shadow-[0_0_20px_rgba(255,106,0,0.2)] transition-all no-underline ${link.placeholder ? "pointer-events-none opacity-50" : ""
+                    }`}
                   onClick={
                     link.placeholder ? (e) => e.preventDefault() : undefined
                   }
@@ -120,9 +119,10 @@ export function Contact() {
                         ? GitHub
                         : link.name === "LinkedIn"
                           ? LinkedIn
-                          : link.name === "Fiverr"
-                            ? Fiverr
-                            : Web
+                          : link.name === "Whatsapp"
+                            ? Whatsapp
+                            : Fiverr
+
                     }
                     style={{
                       filter: "invert(1) brightness(0.8)",
