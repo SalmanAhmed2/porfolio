@@ -25,7 +25,7 @@ function WhatsappFloating() {
   }
   return (
     <FloatingWhatsApp
-      phoneNumber='03402031088'
+      phoneNumber='923402031088'
       accountName='Customer Support'
       onSubmit={handleSubmit}
       className='custom-whatsapp-widget'

@@ -42,9 +42,9 @@ export const siteInfo = {
   name: 'Salman Ahmed',
   title: 'MERN Stack Developer',
   experience: '5+ Years',
-  location: 'Karachi, Pakistan',
+  location: 'Address',
   email: 'salmanahmed35518@gmail.com',
-  phone: '03402031088',
+  phone: '+923402031088',
   tagline: 'Building Digital Experiences That Think Fast.',
   subtitle:
     'MERN Stack Developer specializing in React.js, Next.js, React Native and modern web applications.',
@@ -182,7 +182,7 @@ export const socialLinks: SocialLink[] = [
   { name: 'GitHub', href: 'https://github.com/SalmanAhmed2', placeholder: false },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/salmanahmed35518/', placeholder: false },
   { name: 'Fiverr', href: 'https://www.fiverr.com/sellers/salmanahmed02', placeholder: false },
-  { name: 'Whatsapp', href: 'https://wa.me/03402031088', placeholder: false },
+  { name: 'Whatsapp', href: 'https://wa.me/923402031088', placeholder: false },
 ]
 
 export const heroTechBadges = ['React', 'Next.js', 'TypeScript', 'Node.js']

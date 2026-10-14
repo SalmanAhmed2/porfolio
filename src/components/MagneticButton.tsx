@@ -71,7 +71,7 @@ export function MagneticButton({
     return (
       <motion.a href={href} {...sharedProps} onClick={onClick as never}>
         {variant === 'primary' && shimmer}
-        <span className="relative z-10">{children}</span>
+        <span className="flex items-center gap-2 relative z-10">{children}</span>
       </motion.a>
     )
   }

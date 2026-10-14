@@ -48,7 +48,7 @@ export function Contact() {
           <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-fox/40 via-fox/10 to-cyan/20 opacity-60 blur-sm" />
           <div className="relative glass rounded-3xl p-8 md:p-14 text-center border border-white/10">
             <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-              <MagneticButton href={`https://wa.me/03402031088`} type="a">
+              <MagneticButton href={`https://wa.me/923402031088`} type="a">
                 Start a Conversation
               </MagneticButton>
               <MagneticButton
@@ -76,10 +76,10 @@ export function Contact() {
                 {siteInfo.email}
               </a>
               <span className="hidden sm:inline text-white/15">|</span>
-              <span className="inline-flex items-center gap-2">
+              <a href="https://www.google.com/maps/place/Jhansi+St,+New+Kumbharwara,+Karachi,+Pakistan/@24.874838,67.0022706,790m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3eb33e241fa0f5db:0xe1ca7cf1597a7acc!8m2!3d24.874838!4d67.0048455!16s%2Fg%2F1ptvwwt61?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="pointer inline-flex items-center gap-2">
                 <MapPin size={16} />
                 {siteInfo.location}
-              </span>
+              </a>
               <span className="hidden sm:inline text-white/15">|</span>
               <a
                 href={`tel:${siteInfo.phone}`}
