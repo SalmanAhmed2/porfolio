@@ -19,7 +19,7 @@ function PageLoader() {
 }
 
 function WhatsappFloating() {
-  const handleSubmit = (event: any, message: any) => {
+  const handleSubmit = (message: any) => {
     console.log('Message sent:', message)
     // Add your custom logic here
   }
